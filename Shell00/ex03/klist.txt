@@ -1,0 +1,5 @@
+Credentials cache: API:...
+        Principal: <username>@<DOMAIN>
+
+  Issued                Expires               Principal
+Jun  1 00:00:00 2024  Jun  1 10:00:00 2024  krbtgt/<DOMAIN>@<DOMAIN>
