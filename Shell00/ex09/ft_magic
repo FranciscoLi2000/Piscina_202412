@@ -1,0 +1,19 @@
+# /*
+#  * Magic files describe how to identify file types by examining their content.
+#  * The 'file' command reads magic databases (man magic / man file).
+#  *
+#  * Each rule line has 4 tab-separated fields:
+#  *   offset   : byte offset from the start of the file (0-indexed)
+#  *   type     : data type to match (string, byte, short, long, ...)
+#  *   value    : the value to look for at that offset
+#  *   message  : description printed when the file matches
+#  *
+#  * This rule detects the "42 file type":
+#  *   offset 42  → examine bytes starting at position 42 (the 43rd byte)
+#  *   string     → interpret the bytes as a character string
+#  *   42         → the string must be "42"
+#  *   42 file type → label shown by 'file' on a match
+#  *
+#  * Usage: file -m ft_magic <target_file>
+#  */
+42	string	42	42 file type

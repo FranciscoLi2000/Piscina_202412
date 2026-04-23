@@ -1,0 +1,16 @@
+# /*
+#  * find: recursively searches directories for files matching criteria
+#  *   .          : start from the current directory (includes sub-directories)
+#  *   \( ... \)  : group expressions (parentheses must be escaped from the shell)
+#  *   -name "*~" : match files whose name ends with '~'
+#  *                (Emacs/Vim backup files, e.g. main.c~)
+#  *   -o         : logical OR — match either condition
+#  *   -name "#*#": match files whose name starts AND ends with '#'
+#  *                (Emacs auto-save files, e.g. #main.c#)
+#  *   -print     : print the matched path to stdout BEFORE deleting
+#  *   -delete    : delete the matched file
+#  *
+#  * Only one command is used — no ';', '&&', or pipes needed because
+#  * find's own -print and -delete actions are combined in one invocation.
+#  */
+find . \( -name "*~" -o -name "#*#" \) -print -delete
